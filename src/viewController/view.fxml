@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" prefHeight="50.0" prefWidth="200.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewcontroller.Controller">
+<GridPane alignment="center" hgap="10" prefHeight="50.0" prefWidth="200.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewController.Controller">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -24,11 +24,11 @@
    </rowConstraints>
    <children>
       <Label fx:id="l_red" text="RED" />
-      <TextField fx:id="tf_red" prefHeight="0.0" prefWidth="0.0" promptText="0" text="0" GridPane.rowIndex="1" />
+      <TextField fx:id="tf_red" prefHeight="0.0" prefWidth="0.0" promptText="0" text="0" GridPane.rowIndex="1"  onKeyTyped="#setTf_red"/>
       <Label fx:id="l_green" text="GREEN" GridPane.rowIndex="2" />
-      <TextField fx:id="tf_green" promptText="0" text="0" GridPane.rowIndex="3" />
+      <TextField fx:id="tf_green" promptText="0" text="0" GridPane.rowIndex="3"  onKeyTyped="#setTf_green"/>
       <Label fx:id="l_blue" text="BLUE" GridPane.rowIndex="4" />
-      <TextField fx:id="tf_blue" promptText="0" text="0" GridPane.rowIndex="5" />
+      <TextField fx:id="tf_blue" promptText="0" text="0" GridPane.rowIndex="5" onKeyTyped="#setTf_blue"/>
       <Button fx:id="btn_red_add" mnemonicParsing="false" onMouseClicked="#red_add" prefHeight="26.0" prefWidth="50.0" text="+10" GridPane.columnIndex="1" />
       <Button fx:id="btn_red_sub" mnemonicParsing="false" onMouseClicked="#red_sub" prefHeight="26.0" prefWidth="54.0" text="-10" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <Button fx:id="btn_green_add" mnemonicParsing="false" onMouseClicked="#green_add" prefHeight="26.0" prefWidth="51.0" text="+10" GridPane.columnIndex="1" GridPane.rowIndex="2" />
