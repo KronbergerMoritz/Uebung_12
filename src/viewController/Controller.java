@@ -141,5 +141,16 @@ public class Controller extends Model {
         tf_red.setText(Integer.toString(model.getRed()));
         setBtn_color();
     }
+    @FXML
+    void load(MouseEvent event)
+    {
+
+    }
+
+    @FXML
+    void save(MouseEvent event)
+    {
+
+    }
 
 }

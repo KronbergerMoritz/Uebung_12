@@ -1,5 +1,10 @@
 package model;
 
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStream;
+
 public class Model
 {
 
@@ -8,6 +13,28 @@ public class Model
     private ModularCounter blue = new ModularCounter(0,256);
 
     public Model()
+    {
+
+    }
+    public void write()
+    {
+        try{
+            FileWriter fw = new FileWriter("../save/savedFile.txt");
+            fw.write(red.getValue());
+            fw.write(System.lineSeparator());
+            fw.write(green.getValue());
+            fw.write(System.lineSeparator());
+            fw.write(blue.getValue());
+            fw.close();
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
+
+
+
+    public void read()
     {
 
     }

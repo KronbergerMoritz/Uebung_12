@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
 <GridPane alignment="center" hgap="10" prefHeight="50.0" prefWidth="200.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewController.Controller">
    <columnConstraints>
@@ -13,29 +14,35 @@
       <ColumnConstraints />
       <ColumnConstraints />
       <ColumnConstraints />
+      <ColumnConstraints maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
+      <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints />
-      <RowConstraints />
+      <RowConstraints maxHeight="26.39998779296875" minHeight="26.39998779296875" prefHeight="26.39998779296875" />
+      <RowConstraints maxHeight="24.80001220703125" minHeight="24.80001220703125" prefHeight="24.80001220703125" />
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Label fx:id="l_red" text="RED" />
-      <TextField fx:id="tf_red" prefHeight="0.0" prefWidth="0.0" promptText="0" text="0" GridPane.rowIndex="1"  onKeyTyped="#setTf_red"/>
-      <Label fx:id="l_green" text="GREEN" GridPane.rowIndex="2" />
-      <TextField fx:id="tf_green" promptText="0" text="0" GridPane.rowIndex="3"  onKeyTyped="#setTf_green"/>
-      <Label fx:id="l_blue" text="BLUE" GridPane.rowIndex="4" />
-      <TextField fx:id="tf_blue" promptText="0" text="0" GridPane.rowIndex="5" onKeyTyped="#setTf_blue"/>
-      <Button fx:id="btn_red_add" mnemonicParsing="false" onMouseClicked="#red_add" prefHeight="26.0" prefWidth="50.0" text="+10" GridPane.columnIndex="1" />
-      <Button fx:id="btn_red_sub" mnemonicParsing="false" onMouseClicked="#red_sub" prefHeight="26.0" prefWidth="54.0" text="-10" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Button fx:id="btn_green_add" mnemonicParsing="false" onMouseClicked="#green_add" prefHeight="26.0" prefWidth="51.0" text="+10" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <Button fx:id="btn_green_sub" mnemonicParsing="false" onMouseClicked="#green_sub" prefHeight="26.0" prefWidth="56.0" text="-10" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <Button fx:id="btn_blue_add" mnemonicParsing="false" onMouseClicked="#blue_add" prefHeight="26.0" prefWidth="137.0" text="+10" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Button fx:id="btn_blue_sub" mnemonicParsing="false" onMouseClicked="#blue_sub" prefWidth="50.0" text="-10" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-      <TextField fx:id="tf_hex" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <Button fx:id="btn_color" mnemonicParsing="false" prefHeight="26.0" prefWidth="58.0" GridPane.columnIndex="2" />
+      <Label fx:id="l_red" text="RED" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="tf_red" onKeyTyped="#setTf_red" prefHeight="0.0" prefWidth="0.0" promptText="0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label fx:id="l_green" text="GREEN" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <TextField fx:id="tf_green" onKeyTyped="#setTf_green" promptText="0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Label fx:id="l_blue" text="BLUE" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <TextField fx:id="tf_blue" onKeyTyped="#setTf_blue" promptText="0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Button fx:id="btn_red_add" mnemonicParsing="false" onMouseClicked="#red_add" prefHeight="26.0" prefWidth="142.0" text="+10" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Button fx:id="btn_red_sub" mnemonicParsing="false" onMouseClicked="#red_sub" prefHeight="26.0" prefWidth="142.0" text="-10" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Button fx:id="btn_green_add" mnemonicParsing="false" onMouseClicked="#green_add" prefHeight="26.0" prefWidth="142.0" text="+10" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Button fx:id="btn_green_sub" mnemonicParsing="false" onMouseClicked="#green_sub" prefHeight="26.0" prefWidth="142.0" text="-10" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Button fx:id="btn_blue_add" mnemonicParsing="false" onMouseClicked="#blue_add" prefHeight="26.0" prefWidth="142.0" text="+10" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <Button fx:id="btn_blue_sub" mnemonicParsing="false" onMouseClicked="#blue_sub" prefWidth="142.0" text="-10" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <TextField fx:id="tf_hex" prefHeight="26.0" prefWidth="50.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+      <Button fx:id="btn_color" mnemonicParsing="false" prefHeight="26.0" prefWidth="148.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+      <Button fx:id="btn_load" mnemonicParsing="false" onMouseClicked="#load" prefHeight="26.0" prefWidth="75.0" text="Load" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <Button fx:id="btn_save" mnemonicParsing="false" onMouseClicked="#save" prefHeight="26.0" prefWidth="73.0" text="save" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+      <VBox prefHeight="200.0" prefWidth="100.0" />
    </children>
 </GridPane>
