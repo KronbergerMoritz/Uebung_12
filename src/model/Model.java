@@ -1,9 +1,6 @@
 package model;
 
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 
 public class Model
 {
@@ -16,19 +13,66 @@ public class Model
     {
 
     }
-    public void write()
+
+
+    public void saveColors()
     {
         try{
-            FileWriter fw = new FileWriter("../save/savedFile.txt");
-            fw.write(red.getValue());
-            fw.write(System.lineSeparator());
-            fw.write(green.getValue());
-            fw.write(System.lineSeparator());
-            fw.write(blue.getValue());
+            FileWriter fw = new FileWriter("./save/savedFile.txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(""+red.getValue());
+            bw.newLine();
+            bw.write(""+ green.getValue());
+            bw.newLine();
+            bw.write(""+blue.getValue());
+            bw.newLine();
+            bw.write("Color File Format 1.0");
+            bw.close();
             fw.close();
         }
         catch (Exception ex){
             ex.printStackTrace();
+        }
+    }
+    public void loadColors()
+    {
+        String string;
+        int color = 0;
+        try
+        {
+            FileReader fr = new FileReader("./save/savedFile.txt");
+            BufferedReader br = new BufferedReader(fr);
+
+            while((string = br.readLine()) != null)
+            {
+                if(color==0)
+                {
+                    if(string.equals("Color File Format 1.0") == false)
+                    {
+                        break;
+                    }
+                }
+                else if(color == 1)
+                {
+                    changColorViaAbsoluteValue(ColorCode.RED,string);
+                }
+                else if(color == 2)
+                {
+                    changColorViaAbsoluteValue(ColorCode.GREEN,string);
+                }
+                else if(color == 3)
+                {
+                    changColorViaAbsoluteValue(ColorCode.BLUE,string);
+                    break;
+                }
+                color++;
+            }
+            br.close();
+            fr.close();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
         }
     }
 

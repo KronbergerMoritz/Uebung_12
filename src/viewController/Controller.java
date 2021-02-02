@@ -144,13 +144,15 @@ public class Controller extends Model {
     @FXML
     void load(MouseEvent event)
     {
-
+        model.loadColors();
+        tf_red.setText(""+model.getRed());
+        tf_blue.setText("");
     }
 
     @FXML
     void save(MouseEvent event)
     {
-
+        model.saveColors();
     }
 
 }
