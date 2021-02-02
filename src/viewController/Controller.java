@@ -146,7 +146,9 @@ public class Controller extends Model {
     {
         model.loadColors();
         tf_red.setText(""+model.getRed());
-        tf_blue.setText("");
+        tf_blue.setText(""+model.getBlue());
+        tf_green.setText(""+model.getGreen());
+        setBtn_color();
     }
 
     @FXML

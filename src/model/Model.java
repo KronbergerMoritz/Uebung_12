@@ -20,13 +20,14 @@ public class Model
         try{
             FileWriter fw = new FileWriter("./save/savedFile.txt");
             BufferedWriter bw = new BufferedWriter(fw);
+            bw.write("Color File Format 1.0");
+            bw.newLine();
             bw.write(""+red.getValue());
             bw.newLine();
             bw.write(""+ green.getValue());
             bw.newLine();
             bw.write(""+blue.getValue());
             bw.newLine();
-            bw.write("Color File Format 1.0");
             bw.close();
             fw.close();
         }
@@ -77,15 +78,10 @@ public class Model
     }
 
 
-
-    public void read()
-    {
-
-    }
-
     public void changColorViaAbsoluteValue(ColorCode cc, String value)
     {
-
+        int i = Integer.parseInt(value);
+        changColorViaAbsoluteValue(cc,i);
     }
 
     public void changColorViaAbsoluteValue(ColorCode cc, int value)
